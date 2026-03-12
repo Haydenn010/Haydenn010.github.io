@@ -1,0 +1,271 @@
+
+/* CSS Reset */
+body, header, nav, main, footer, img, h1, h1, h2, h3, h4, h5, figure, p, ol, ul, li, a {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #f5f7f4;
+    color: #2d2d2d;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: #1e4d2b;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* ensure it stays above other content */
+}
+
+header .logo h2 {
+    font-size: 1.8rem; /* slightly larger branding */
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO SECTION */
+.hero {
+    /* updated to show hydroponic full image */
+    background: url("../images/Hydroponic Full.jpeg") center/cover no-repeat;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 60px; /* preserve some horizontal spacing */
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px; /* space between header and button */
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #2f7d32;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #256628;
+}
+
+/* PRODUCT GRID */
+.products,
+.product {
+    padding: 60px 8%;
+    text-align: center; /* center header and any inline content */
+}
+
+.products h2,
+.product h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #1e4d2b;
+}
+
+.product-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.product-card img {
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover img {
+    transform: rotate(360deg);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.product-card h3 {
+    margin: 12px 0;
+    font-size: 18px;
+}
+
+.product-card p {
+    color: #6b6b6b;
+}
+
+/* CATEGORY SECTIONS */
+/* support both singular and plural class names so that headers are centered */
+.categories,
+.category {
+    padding: 60px 8%;
+    text-align: center; /* center section headings and inline content */
+}
+
+.categories h2,
+.category h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #1e4d2b;
+}
+
+/* horizontal scrolling grid with rotation animation */
+.category-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 20px; /* space for scrollbar */
+}
+
+.category-card img {
+    transition: transform 0.6s ease;
+}
+
+.category-card:hover img {
+    transform: rotate(360deg);
+}
+
+
+/* BIBLIOGRAPHY SECTION */
+.bibliography {
+    padding: 60px 8%;
+    background: #fff;
+    color: #2d2d2d;
+}
+.bibliography h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #1e4d2b;
+}
+.bibliography ul {
+    margin-top: 15px;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #1e4d2b;
+    color: white;
+    padding: 40px 8%;
+    margin-top: 60px;
+    text-align: center;
+}
+
+/* page-specific tweaks */
+body.science header,
+body.about header,
+body.news header {
+    background: #001f3f; /* science/about/news pages use a darker blue header */
+}
+
+footer .footer-columns {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+/* tablet: 768px and below */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+    header nav {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .search {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .category-grid,
+    .product-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* ensure newsletter/contact section is centered at all sizes */
+.newsletter {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+/* mobile: 480px and below */
+@media (max-width: 480px) {
+    header h2,
+    header .logo h2 {
+        font-size: 20px;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
+    .btn {
+        padding: 10px 20px;
+    }
+    .search input,
+    .newsletter input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .product-card,
+    .category-card {
+        padding: 12px;
+    }
+}
+
+footer a {
+    color: #d7f3d1;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
